@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class Login extends Controller
+class LoginController extends Controller
 {
     public function index(){
         if($user = Auth::user()){
