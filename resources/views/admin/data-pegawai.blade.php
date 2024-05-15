@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin | Dashboard</title>
+        <title>Admin | Data Pegawai</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -65,7 +65,7 @@
                             with font-awesome or any other icon font library -->
                             <li class="nav-header">MENU</li>
                             <li class="nav-item">
-                                <a href="admin" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+                                <a href="/" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-home"></i>
                                     <p>
                                         Dashboard
@@ -73,7 +73,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="admin/pegawai" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
+                                <a href="pegawai" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>
                                         Data Pegawai
@@ -136,12 +136,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Data Pohon Sawit</h1>
+                                <h1>Data Pegawai Laboratorium</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item">Home</li>
-                                    <li class="breadcrumb-item active">Data Pohon</li>
+                                    <li class="breadcrumb-item active">Data Pegawai</li>
                                 </ol>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Data Pohon</h3>
+                                        <h3 class="card-title">Data Pegawai</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -189,30 +189,28 @@
                                                     <button type="submit" class="btn btn-block bg-gradient-primary">Filter</button>
                                                 </div>
                                             </div>
-                                        </form>                                    
+                                        </form>
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>ID Pohon</th>
-                                                    <th>Tanggal Tanam</th>
-                                                    <th>Tinggi Pohon (m)</th>
-                                                    <th>Deskripsi</th>
-                                                    <th>Tanggal Kematian</th>
-                                                    <th>Bukti Kematian</th>
+                                                    <th>ID Pegawai</th>
+                                                    <th>Nama Pegaawi</th>
+                                                    <th>Jenis Kelamin</th>
+                                                    <th>Email</th>
+                                                    <th>No Hp</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($data as $data)
                                                 <tr>                                                
-                                                    <td>{{ $data->id_pohon }}</td>
-                                                    <td>{{ $data->tgl_tanam }}</td>
-                                                    <td>{{ $data->tinggi_pohon }}</td>
-                                                    <td>{{ $data->deskripsi }}</td>
-                                                    <td>{{ $data->tgl_kematian }}</td>
-                                                    <td>{{ $data->bukti_kematian }}</td>
+                                                    <td>{{ $data->id_pegawai }}</td>
+                                                    <td>{{ $data->nama_pegawai }}</td>
+                                                    <td>{{ $data->jenis_kelamin }}</td>
+                                                    <td>{{ $data->email_pegawai }}</td>
+                                                    <td>{{ $data->no_hp_pegawai }}</td>
                                                     <td>
-                                                        <a href="/showsiswa/detail/{{ $data->id_pohon }}" class="btn btn-block btn-outline-primary" aria-placeholder="Detail">
+                                                        <a href="/showsiswa/detail/{{ $data->id_pegawai }}" class="btn btn-block btn-outline-primary" aria-placeholder="Detail">
                                                             <i class="nav-icon fas fa-eye"></i>
                                                         </a>
                                                     </td>

@@ -28,9 +28,11 @@ Route::controller(LoginController::class)->group(function(){
 
 Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => ['cekUserLogin:1']], function(){
-        // Route::resource('admin', Admin::class);
         Route::controller(Admin::class)->group(function(){
             Route::get('admin', 'index')->name('admin');
+            Route::get('admin/pegawai', 'showpegawai');
+            Route::get('admin/laboratorium', 'showlab');
+            Route::get('admin/lapangan', 'showlapangan');
             
         });
     });
