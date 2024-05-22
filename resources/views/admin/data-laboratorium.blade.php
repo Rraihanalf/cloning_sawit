@@ -160,36 +160,17 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
-                                        <form method="GET" action="/showsiswa">
-                                            @csrf
-                                            <div class="row">
-                                                <div class="col-md-4 mb-3">
-                                                    <!-- <input type="text" name="keyword"> -->
-                                                    <select name="semester" class="custom-select rounded-0" id="exampleSelectRounded0">
-                                                        <option value="">Filter Semester</option>
-                                                        <option value="1">Semester 1</option>
-                                                        <option value="2">Semester 2</option>
-                                                        <option value="3">Semester 3</option>
-                                                        <option value="4">Semester 4</option>
-                                                        <option value="5">Semester 5</option>
-                                                        <option value="6">Semester 6</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <select name="kelas" class="custom-select rounded-0" id="exampleSelectRounded0">
-                                                        <option value="">Filter Kelas</option>
-                                                        <option value="A">Kelas A</option>
-                                                        <option value="B">Kelas B</option>
-                                                        <option value="C">Kelas C</option>
-                                                        <option value="D">Kelas D</option>
-                                                        <option value="Axioo">Kelas Axioo</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <button type="submit" class="btn btn-block bg-gradient-primary">Filter</button>
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <a href="#" data-toggle="modal" data-target="#Pelaksanaan" class="btn btn-block bg-gradient-primary">Tambah Data</a>
                                             </div>
-                                        </form>
+                                            
+                                        </div>
+                                        @if(session()->has('success'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('success') }}
+                                        </div>
+                                        @endif
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
@@ -284,6 +265,6 @@
                 });
             });
         </script>
-        
+        @include('admin.modal.modal-tambah-lab')
     </body>
 </html>

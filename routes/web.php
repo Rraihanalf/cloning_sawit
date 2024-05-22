@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\Petugas;
 use Illuminate\Support\Facades\Route;
 
 /*

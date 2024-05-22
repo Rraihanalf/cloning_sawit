@@ -65,7 +65,7 @@
                             with font-awesome or any other icon font library -->
                             <li class="nav-header">MENU</li>
                             <li class="nav-item">
-                                <a href="admin" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+                                <a href="/" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-home"></i>
                                     <p>
                                         Dashboard
@@ -81,7 +81,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="laboratorium" class="nav-link {{ Request::is('admin/laboratorium') ? 'active' : '' }}">
+                                <a href="admin/laboratorium" class="nav-link {{ Request::is('admin/laboratorium') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-flask"></i>
                                     <p>
                                         Data Laboratorium
@@ -89,7 +89,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="lapangan" class="nav-link {{ Request::is('admin/lapangan') ? 'active' : '' }}">
+                                <a href="admin/lapangan" class="nav-link {{ Request::is('admin/lapangan') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tree"></i>
                                     <p>
                                         Data Lapangan
