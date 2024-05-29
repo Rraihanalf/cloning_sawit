@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin | Data Laboratorium</title>
+        <title>Admin | Data Lapangan</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -97,7 +97,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="sampel" class="nav-link {{ Request::is('admin/sampel') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Data Sampel
@@ -105,7 +105,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="user" class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-user-lock"></i>
                                     <p>
                                         Daftar Users
@@ -160,36 +160,16 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
-                                        <form method="GET" action="/showsiswa">
-                                            @csrf
-                                            <div class="row">
-                                                <div class="col-md-4 mb-3">
-                                                    <!-- <input type="text" name="keyword"> -->
-                                                    <select name="semester" class="custom-select rounded-0" id="exampleSelectRounded0">
-                                                        <option value="">Filter Semester</option>
-                                                        <option value="1">Semester 1</option>
-                                                        <option value="2">Semester 2</option>
-                                                        <option value="3">Semester 3</option>
-                                                        <option value="4">Semester 4</option>
-                                                        <option value="5">Semester 5</option>
-                                                        <option value="6">Semester 6</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <select name="kelas" class="custom-select rounded-0" id="exampleSelectRounded0">
-                                                        <option value="">Filter Kelas</option>
-                                                        <option value="A">Kelas A</option>
-                                                        <option value="B">Kelas B</option>
-                                                        <option value="C">Kelas C</option>
-                                                        <option value="D">Kelas D</option>
-                                                        <option value="Axioo">Kelas Axioo</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <button type="submit" class="btn btn-block bg-gradient-primary">Filter</button>
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <a href="lapangan/create" class="btn btn-block bg-gradient-primary">Tambah Data</a>
                                             </div>
-                                        </form>
+                                        </div>
+                                        @if(session()->has('success'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('success') }}
+                                        </div>
+                                        @endif
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>

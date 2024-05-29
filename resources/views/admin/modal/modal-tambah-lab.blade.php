@@ -1,24 +1,16 @@
-<form action="showsiswa/create" method="post" enctype="multipart/form-data">
+<form action="admin/lapangan/create" method="post" enctype="multipart/form-data">
     @csrf
     <div class="modal" id="Pelaksanaan" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Pelaksanaan Kompensasi</h5>
+            <h5 class="modal-title">Tambah Lapangan</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <select name="semester_mhs" class="custom-select rounded-0 mb-2 @error('semester') is-invalid @enderror" id="exampleSelectRounded0">
-                <option value="">Pilih Semester</option>
-                <option value="1">Semester 1</option>
-                <option value="2">Semester 2</option>
-                <option value="3">Semester 3</option>
-                <option value="4">Semester 4</option>
-                <option value="5">Semester 5</option>
-                <option value="6">Semester 6</option>
-            </select>
+            <input type="text" name="id_lapangan" id="">
             @error('semester')
               <div class="invalid-feedback">
                 {{ $message }}
