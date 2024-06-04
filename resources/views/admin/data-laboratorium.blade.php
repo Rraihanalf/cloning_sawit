@@ -97,7 +97,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="sampel" class="nav-link {{ Request::is('admin/sampel') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Data Sampel
@@ -105,7 +105,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="user" class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-user-lock"></i>
                                     <p>
                                         Daftar Users
@@ -164,7 +164,6 @@
                                             <div class="col-md-4 mb-3">
                                                 <a href="#" data-toggle="modal" data-target="#Pelaksanaan" class="btn btn-block bg-gradient-primary">Tambah Data</a>
                                             </div>
-                                            
                                         </div>
                                         @if(session()->has('success'))
                                         <div class="alert alert-success" role="alert">

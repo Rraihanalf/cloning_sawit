@@ -34,7 +34,11 @@ Route::group(['middleware' => ['auth']], function(){
             Route::get('admin/pegawai', 'showpegawai');
             Route::get('admin/laboratorium', 'showlab');
             Route::get('admin/lapangan', 'showlapangan');
-            
+            Route::get('admin/sampel', 'showsampel');
+            Route::get('admin/user', 'showuser');
+            Route::get('admin/lapangan/create', 'addlapangan');
+            Route::post('admin/lapangan/lapangan/store', 'store_lapangan');
+            Route::post('admin/laboratorium/lab/store', 'store_laboratorium'); 
         });
     });
 });

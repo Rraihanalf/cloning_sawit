@@ -1,19 +1,41 @@
-@extends('layouts.app')
 
-@section('title', 'Dashboard')
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin | Data Users</title>
 
-@push('style')
-    <!-- CSS Libraries -->
-    <link rel="stylesheet"
-        href="{{ asset('library/jqvmap/dist/jqvmap.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('library/summernote/dist/summernote-bs4.min.css') }}">
-@endpush
-
-@section('main')
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('/') }}plugins/fontawesome-free/css/all.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="{{ asset('/') }}plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{ asset('/') }}plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{ asset('/') }}plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{ asset('/') }}dist/css/adminlte.min.css">
+    </head>
+    <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
-            
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link">Dashboard</a>
+                    </li>
+                </ul>
+
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    
+                </ul>
+            </nav>
             <!-- /.navbar -->
 
             <!-- Main Sidebar Container -->
@@ -51,7 +73,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="admin/pegawai" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
+                                <a href="pegawai" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>
                                         Data Pegawai
@@ -59,7 +81,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="admin/laboratorium" class="nav-link {{ Request::is('admin/laboratorium') ? 'active' : '' }}">
+                                <a href="laboratorium" class="nav-link {{ Request::is('admin/laboratorium') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-flask"></i>
                                     <p>
                                         Data Laboratorium
@@ -67,7 +89,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="admin/lapangan" class="nav-link {{ Request::is('admin/lapangan') ? 'active' : '' }}">
+                                <a href="lapangan" class="nav-link {{ Request::is('admin/lapangan') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tree"></i>
                                     <p>
                                         Data Lapangan
@@ -75,7 +97,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="sampel" class="nav-link {{ Request::is('admin/sampel') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Data Sampel
@@ -83,7 +105,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="user" class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-user-lock"></i>
                                     <p>
                                         Daftar Users
@@ -108,8 +130,24 @@
             </aside>
 
             <!-- Content Wrapper. Contains page content -->
-            <div class="main-content">
+            <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Data Lapangan Kebun Sawit</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item active">Data Sampel</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
 
                 <!-- Main content -->
                 <section class="content">
@@ -118,7 +156,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Data Pohon</h3>
+                                        <h3 class="card-title">Data Sampel</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -151,30 +189,42 @@
                                                     <button type="submit" class="btn btn-block bg-gradient-primary">Filter</button>
                                                 </div>
                                             </div>
-                                        </form>                                    
+                                        </form>
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>ID Pohon</th>
-                                                    <th>Tanggal Tanam</th>
-                                                    <th>Tinggi Pohon (m)</th>
-                                                    <th>Deskripsi</th>
-                                                    <th>Tanggal Kematian</th>
-                                                    <th>Bukti Kematian</th>
+                                                    <th>ID</th>
+                                                    <th>ID Pegawai</th>
+                                                    <th>Username</th>
+                                                    <th>Password</th>
+                                                    <th>Level</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($data as $data)
                                                 <tr>                                                
-                                                    <td>{{ $data->id_pohon }}</td>
-                                                    <td>{{ $data->tgl_tanam }}</td>
-                                                    <td>{{ $data->tinggi_pohon }}</td>
-                                                    <td>{{ $data->deskripsi }}</td>
-                                                    <td>{{ $data->tgl_kematian }}</td>
-                                                    <td>{{ $data->bukti_kematian }}</td>
+                                                    <td>{{ $data->id }}</td>
+                                                    <td>{{ $data->id_pegawai }}</td>
+                                                    <td>{{ $data->username }}</td>
+                                                    <td>{{ $data->password }}</td>
                                                     <td>
-                                                        <a href="/showsiswa/detail/{{ $data->id_pohon }}" class="btn btn-block btn-outline-primary" aria-placeholder="Detail">
+                                                        @if ($data->level == 1)
+                                                            Admin
+                                                        @elseif ($data->level == 2)
+                                                            Petugas Lab
+                                                        @elseif ($data->level == 3)
+                                                            Petugas Lap
+                                                        @elseif ($data->level == 4)
+                                                            Ketua Lab
+                                                        @elseif ($data->level == 5)
+                                                            Manager
+                                                        @else
+                                                            Unknown
+                                                        @endif
+                                                    </td>                                    
+                                                    <td>
+                                                        <a href="/showsiswa/detail/{{ $data->id }}" class="btn btn-block btn-outline-primary" aria-placeholder="Detail">
                                                             <i class="nav-icon fas fa-eye"></i>
                                                         </a>
                                                     </td>
@@ -197,27 +247,59 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
+                </div>
+                <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            </footer>
 
             <!-- Control Sidebar -->
-            
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
 
         <!-- jQuery -->
-@endsection
-
-@push('scripts')
-    <!-- JS Libraies -->
-    <script src="{{ asset('library/simpleweather/jquery.simpleWeather.min.js') }}"></script>
-    <script src="{{ asset('library/chart.js/dist/Chart.min.js') }}"></script>
-    <script src="{{ asset('library/jqvmap/dist/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('library/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
-    <script src="{{ asset('library/summernote/dist/summernote-bs4.min.js') }}"></script>
-    <script src="{{ asset('library/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
-
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('js/page/index-0.js') }}"></script>
-@endpush
-
+        <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- DataTables  & Plugins -->
+        <script src="{{ asset('/') }}plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+        <script src="{{ asset('/') }}plugins/jszip/jszip.min.js"></script>
+        <script src="{{ asset('/') }}plugins/pdfmake/pdfmake.min.js"></script>
+        <script src="{{ asset('/') }}plugins/pdfmake/vfs_fonts.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-buttons/js/buttons.print.min.js"></script>
+        <script src="{{ asset('/') }}plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ asset('/') }}dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <!-- <script src="{{ asset('/') }}dist/js/demo.js"></script> -->
+        <!-- Page specific script -->
+        <script>
+            $(function () {
+                $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                });
+            });
+        </script>
+        
+    </body>
+</html>

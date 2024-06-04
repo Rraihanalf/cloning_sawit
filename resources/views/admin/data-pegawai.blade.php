@@ -97,7 +97,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="sampel" class="nav-link {{ Request::is('admin/sampel') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Data Sampel
@@ -105,7 +105,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link {{ Request::is('') ? 'active' : '' }}">
+                                <a href="user" class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-user-lock"></i>
                                     <p>
                                         Daftar Users
