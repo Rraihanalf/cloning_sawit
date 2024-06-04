@@ -13,22 +13,22 @@
             
             <li class="menu-header">MENU</li>
             
-            <li>
-                <a href="/" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin') ? 'active' : '' }}">
+                <a href="/" class="nav-link">
                     <i class="fas fa-home"></i>
                     <span>Dasboard</span>
                 </a>
             </li>
 
-            <li>
-                <a href="admin/pegawai" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/pegawai') ? 'active' : '' }}">
+                <a href="/pegawai" class="nav-link">
                     <i class="fas fa-users"></i>
                     <span>Data Pegawai</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="admin/laboratorium" class="nav-link {{ Request::is('admin/laboratorium') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/laboratorium') ? 'active' : '' }}">
+                <a href="/laboratorium" class="nav-link">
                     <i class="fas fa-flask"></i>
                     <span>Data Laboratorium</span>
                 </a>
