@@ -18,13 +18,29 @@
     <body class="hold-transition login-page">
         <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center">
-                <h1><b>LOGIN</b></h1>
-                <!-- <a href="{{ asset('/') }}index2.html" class="h1"><b>LOGIN</b></a> -->
+       
+
+        <!--<div class="card-box">
+            <div class="card-box text-start">
+                <h1><b>Database</b></h1>
+                <h1><b>Cloning Sawit</b></h1>
+                
             </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-">
+                    <img src="{{ asset('/') }}assets/sawitlogo.png" width="110px" alt="">
+            </div>
+            <div class="col-w-10">
+                <div class="card-box text-start">
+                    <h1><b>Database</b></h1>
+                    <h1><b>Cloning Sawit</b></h1>
+                </div>
+            </div>
+        </div>
+
             <div class="card-body">
-            <p class="login-box-msg">Silahkan Isi Untuk Masuk</p>
 
             <form action="{{ url('login/proses') }}" method="post">
                 @csrf
@@ -33,11 +49,7 @@
                     @error('username')
                         is-invalid
                     @enderror" placeholder="Username" name="username">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-user"></span>
-                        </div>
-                    </div>
+                    
                     @error('username')
                         <div id="validationServer03Feedback" class="invalid-feedback">
                             {{ $message }}
@@ -49,27 +61,19 @@
                     @error('password')
                         is-invalid
                     @enderror" placeholder="Password" name="password">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
+                    
                     @error('password')
                         <div id="validationServer03Feedback" class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
-                <div class="row">
-                    <!-- /.col -->
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
+                <div class ="button-style">
+                        <button class ="button" type="submit" >Sign In</button>
+                </div>   
             </form>
             <!-- /.card-body -->
-        </div>
+        
         <!-- /.card -->
         </div>
         <!-- /.login-box -->
@@ -82,3 +86,30 @@
         <script src="{{ asset('/') }}dist/js/adminlte.min.js"></script>
     </body>
 </html>
+
+
+
+
+<style>
+    .button-style{
+        display: grid;
+      place-items: center;
+    }
+
+    button {
+    display: inline-block;
+      background: #4F6F52;
+      color: #fff;
+      width: 130px;
+      height: 40px;
+      border-radius: 15px;
+      border: thin solid #888;
+      white-space: nowrap;
+      font-size: 16px;
+      font-weight: normal;
+      font-family: 'Roboto', sans-serif;
+      margin: 0rem 0;
+    }
+
+
+  </style>
