@@ -10,6 +10,7 @@ use App\Models\Pegawai;
 use App\Models\Sampel;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class Admin extends Controller
 {
@@ -25,13 +26,41 @@ class Admin extends Controller
         return view('admin.data-pegawai')->with('data', $data);
     }
 
+    public function add_pegawai(){
+
+    }
+
+    public function store_pegawai(Request $request){
+        $validatedData = $request->validate([
+            'nama_pegawai' => 'required|string|max:255',
+            'jenis_kelamin' => 'required|string',
+            'email_pegawai' => 'required|email|unique:pegawais,email_pegawai',
+            'no_hp_pegawai' => 'required|string|max:15',
+        ]);
+
+        $lastPegawai = Pegawai::orderBy('id_pegawai', 'desc')->first();
+        if ($lastPegawai) {
+            $lastIdNumber = (int) substr($lastPegawai->id_pegawai, 3);
+            $newIdNumber = $lastIdNumber + 1;
+        } else {
+            $newIdNumber = 1;
+        }
+
+        $newIdPegawai = 'PL-' . str_pad($newIdNumber, 3, '0', STR_PAD_LEFT);
+
+        $validatedData['id_pegawai'] = $newIdPegawai;
+
+        Pegawai::create($validatedData);
+        return redirect()->intended('admin/pegawai')->with('success', 'Data Pegawai Baru Berhasil Dibuat!');
+    }
+
     public function showlab(){
         $data = Laboratorium::all();
 
         return view('admin.data-laboratorium')->with('data', $data);
     }
 
-    public function addlab(){
+    public function add_lab(){
         return view('admin.data-laboratorium');
     }
 
@@ -108,12 +137,15 @@ class Admin extends Controller
 
     public function adduser(Request $request){
         $validatedData = $request->validate([
-            'id_user' => 'required',
             'id_pegawai' => 'required',
-            'username' => 'required',
             'password' => 'required',
-            'level' => 'required'
+            'level' => 'required|integer'
         ]);
+
+        $validatedData['username'] = str_replace('-', '', $validatedData['id_pegawai']);
+        
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        
         User::create($validatedData);
         return redirect()->intended('admin/user')->with('success', 'Data Pengguna Baru Berhasil Dibuat!');
     }
