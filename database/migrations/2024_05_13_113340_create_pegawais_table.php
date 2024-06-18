@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pegawais', function (Blueprint $table) {
             // $table->id();
             $table->string('id_pegawai')->primary();
+            $table->string('id_lab');
             $table->string('nama_pegawai');
             $table->string('jenis_kelamin');
             $table->string('email_pegawai');

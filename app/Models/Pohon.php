@@ -12,6 +12,7 @@ class Pohon extends Model
         'id_sampel',
         'id_lapangan',
         'tgl_tanam',
+        'daya_hidup',
         'tinggi_pohon',
         'tgl_kematian',
         'bukti_kematian',

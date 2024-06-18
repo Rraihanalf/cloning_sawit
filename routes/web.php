@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin;
-use App\Http\Controllers\Petugas;
+use App\Http\Controllers\PetugasLab;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +31,43 @@ Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => ['cekUserLogin:1']], function(){
         Route::controller(Admin::class)->group(function(){
             Route::get('admin', 'index')->name('admin');
-            Route::get('admin/pegawai', 'showpegawai');
-            Route::get('admin/laboratorium', 'showlab');
-            Route::get('admin/lapangan', 'showlapangan');
-            Route::get('admin/sampel', 'showsampel');
-            Route::get('admin/user', 'showuser');
-            Route::get('admin/lapangan/create', 'addlapangan');
-            Route::post('admin/lapangan/lapangan/store', 'store_lapangan');
-            Route::post('admin/laboratorium/lab/store', 'store_laboratorium'); 
+            Route::get('pegawai/admin', 'showpegawai');
+            Route::get('pegawai/create', 'add_pegawai');
+            Route::post('pegawai/create/store', 'store_pegawai');
+
+            Route::get('laboratorium/admin', 'showlab');
+            Route::get('laboratorium/create', 'add_lab');
+            Route::post('laboratorium/create/store', 'store_laboratorium');
+
+            Route::get('lapangan/admin', 'showlapangan');
+            Route::get('lapangan/create', 'addlapangan');
+            Route::post('lapangan/create/store', 'store_lapangan');
+
+            Route::get('sampel/admin', 'showsampel');
+            Route::get('sampel/create', 'add_sampel');
+            Route::post('sampel/create/store', 'store_sampel');
+
+            Route::get('user/admin', 'showuser');
+            Route::get('user/create', 'add_user');
+            Route::post('user/create/store', 'store_user');
         });
+    });
+
+    Route::group(['middleware' => ['cekUserLogin:2']], function(){
+        Route::controller(PetugasLab::class)->group(function(){
+            Route::get('petugas', 'index')->name('petugas');
+        });
+    });
+
+    Route::group(['middleware' => ['cekUserLogin:3']], function(){
+
+    });
+
+    Route::group(['middleware' => ['cekUserLogin:4']], function(){
+
+    });
+
+    Route::group(['middleware' => ['cekUserLogin:5']], function(){
+
     });
 });

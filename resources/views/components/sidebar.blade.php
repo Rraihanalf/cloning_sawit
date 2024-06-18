@@ -20,36 +20,36 @@
                 </a>
             </li>
 
-            <li class="{{ Request::is('admin/pegawai') ? 'active' : '' }}">
-                <a href="/pegawai" class="nav-link">
+            <li class="{{ Request::is('pegawai/admin') ? 'active' : '' }}">
+                <a href="/pegawai/admin" class="nav-link">
                     <i class="fas fa-users"></i>
                     <span>Data Pegawai</span>
                 </a>
             </li>
 
-            <li class="{{ Request::is('admin/laboratorium') ? 'active' : '' }}">
-                <a href="/laboratorium" class="nav-link">
+            <li class="{{ Request::is('laboratorium/admin') ? 'active' : '' }}">
+                <a href="/laboratorium/admin" class="nav-link">
                     <i class="fas fa-flask"></i>
                     <span>Data Laboratorium</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="admin/lapangan" class="nav-link {{ Request::is('admin/lapangan') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('lapangan/admin') ? 'active' : '' }}">
+                <a href="/lapangan/admin" class="nav-link">
                     <i class="fas fa-tree"></i>
                     <span>Data Lapangan</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="admin/sampel" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('sampel/admin') ? 'active' : '' }}">
+                <a href="/sampel/admin" class="nav-link">
                     <i class="fas fa-book"></i>
                     <span>Data Sampel</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="admin/user" class="nav-link {{ Request::is('admin/pegawai') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('user/admin') ? 'active' : '' }}">
+                <a href="/user/admin" class="nav-link">
                     <i class="fas fa-user-lock"></i>
                     <span>Daftar Users</span>
                 </a>

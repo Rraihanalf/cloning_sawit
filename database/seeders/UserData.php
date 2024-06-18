@@ -61,25 +61,25 @@ class UserData extends Seeder
         
             // Pegawai untuk Laboratorium Fisika (S-002)
             [
-                'id_pegawai' => 'PL-006-S-002',
+                'id_pegawai' => 'PL-006',
                 'username' => 'PL006',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-007-S-002',
+                'id_pegawai' => 'PL-007',
                 'username' => 'PL007',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-008-S-002',
+                'id_pegawai' => 'PL-008',
                 'username' => 'PL008',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-009-S-002',
+                'id_pegawai' => 'PL-009',
                 'username' => 'PL009',
                 'password' => bcrypt('123456'),
                 'level' => '2',
@@ -87,37 +87,37 @@ class UserData extends Seeder
         
             // Pegawai untuk Laboratorium Biologi (S-003)
             [
-                'id_pegawai' => 'PL-010-S-003',
+                'id_pegawai' => 'PL-010',
                 'username' => 'PL010',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-011-S-003',
+                'id_pegawai' => 'PL-011',
                 'username' => 'PL011',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-012-S-003',
+                'id_pegawai' => 'PL-012',
                 'username' => 'PL012',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-013-S-003',
+                'id_pegawai' => 'PL-013',
                 'username' => 'PL013',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-014-S-003',
+                'id_pegawai' => 'PL-014',
                 'username' => 'PL014',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-015-S-003',
+                'id_pegawai' => 'PL-015',
                 'username' => 'PL015',
                 'password' => bcrypt('123456'),
                 'level' => '2',
@@ -125,19 +125,19 @@ class UserData extends Seeder
         
             // Pegawai untuk Laboratorium Komputer (S-004)
             [
-                'id_pegawai' => 'PL-016-S-004',
+                'id_pegawai' => 'PL-016',
                 'username' => 'PL016',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-017-S-004',
+                'id_pegawai' => 'PL-017',
                 'username' => 'PL017',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-018-S-004',
+                'id_pegawai' => 'PL-018',
                 'username' => 'PL018',
                 'password' => bcrypt('123456'),
                 'level' => '2',
@@ -145,25 +145,25 @@ class UserData extends Seeder
         
             // Pegawai untuk Laboratorium Teknik (S-005)
             [
-                'id_pegawai' => 'PL-019-S-005',
+                'id_pegawai' => 'PL-019',
                 'username' => 'PL019',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-020-S-005',
+                'id_pegawai' => 'PL-020',
                 'username' => 'PL020',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-021-S-005',
+                'id_pegawai' => 'PL-021',
                 'username' => 'PL021',
                 'password' => bcrypt('123456'),
                 'level' => '2',
             ],
             [
-                'id_pegawai' => 'PL-022-S-005',
+                'id_pegawai' => 'PL-022',
                 'username' => 'PL022',
                 'password' => bcrypt('123456'),
                 'level' => '2',
@@ -177,7 +177,8 @@ class UserData extends Seeder
 
         $pegawai = [
             [
-                'id_pegawai' => 'PL-001-S-001',
+                'id_pegawai' => 'PL-001',
+                'id_lab' => 'S-001',
                 'nama_pegawai' => 'Andi Surya',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'andi.surya@example.com',
@@ -186,7 +187,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-002-S-001',
+                'id_pegawai' => 'PL-002',
+                'id_lab' => 'S-001',
                 'nama_pegawai' => 'Budi Santoso',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'budi.santoso@example.com',
@@ -195,7 +197,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-003-S-001',
+                'id_pegawai' => 'PL-003',
+                'id_lab' => 'S-001',
                 'nama_pegawai' => 'Citra Dewi',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'citra.dewi@example.com',
@@ -204,7 +207,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-004-S-001',
+                'id_pegawai' => 'PL-004',
+                'id_lab' => 'S-001',
                 'nama_pegawai' => 'Dedi Kusuma',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'dedi.kusuma@example.com',
@@ -213,7 +217,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-005-S-001',
+                'id_pegawai' => 'PL-005',
+                'id_lab' => 'S-001',
                 'nama_pegawai' => 'Eka Putri',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'eka.putri@example.com',
@@ -223,7 +228,8 @@ class UserData extends Seeder
             ],
         
             [
-                'id_pegawai' => 'PL-006-S-002',
+                'id_pegawai' => 'PL-006',
+                'id_lab' => 'S-002',
                 'nama_pegawai' => 'Farid Ahmad',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'farid.ahmad@example.com',
@@ -232,7 +238,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-007-S-002',
+                'id_pegawai' => 'PL-007',
+                'id_lab' => 'S-002',
                 'nama_pegawai' => 'Gina Laras',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'gina.laras@example.com',
@@ -241,7 +248,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-008-S-002',
+                'id_pegawai' => 'PL-008',
+                'id_lab' => 'S-002',
                 'nama_pegawai' => 'Hariyanto',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'hariyanto@example.com',
@@ -250,7 +258,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-009-S-002',
+                'id_pegawai' => 'PL-009',
+                'id_lab' => 'S-002',
                 'nama_pegawai' => 'Indah Purnama',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'indah.purnama@example.com',
@@ -260,7 +269,8 @@ class UserData extends Seeder
             ],
         
             [
-                'id_pegawai' => 'PL-010-S-003',
+                'id_pegawai' => 'PL-010',
+                'id_lab' => 'S-003',
                 'nama_pegawai' => 'Joko Widodo',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'joko.widodo@example.com',
@@ -269,7 +279,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-011-S-003',
+                'id_pegawai' => 'PL-011',
+                'id_lab' => 'S-003',
                 'nama_pegawai' => 'Kartika Sari',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'kartika.sari@example.com',
@@ -278,7 +289,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-012-S-003',
+                'id_pegawai' => 'PL-012',
+                'id_lab' => 'S-003',
                 'nama_pegawai' => 'Lukman Hakim',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'lukman.hakim@example.com',
@@ -287,7 +299,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-013-S-003',
+                'id_pegawai' => 'PL-013',
+                'id_lab' => 'S-003',
                 'nama_pegawai' => 'Maya Sari',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'maya.sari@example.com',
@@ -296,7 +309,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-014-S-003',
+                'id_pegawai' => 'PL-014',
+                'id_lab' => 'S-003',
                 'nama_pegawai' => 'Nurul Fadhilah',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'nurul.fadhilah@example.com',
@@ -305,7 +319,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-015-S-003',
+                'id_pegawai' => 'PL-015',
+                'id_lab' => 'S-003',
                 'nama_pegawai' => 'Omar Saif',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'omar.saif@example.com',
@@ -315,7 +330,8 @@ class UserData extends Seeder
             ],
         
             [
-                'id_pegawai' => 'PL-016-S-004',
+                'id_pegawai' => 'PL-016',
+                'id_lab' => 'S-004',
                 'nama_pegawai' => 'Putu Wibawa',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'putu.wibawa@example.com',
@@ -324,7 +340,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-017-S-004',
+                'id_pegawai' => 'PL-017',
+                'id_lab' => 'S-004',
                 'nama_pegawai' => 'Qori Asih',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'qori.asih@example.com',
@@ -333,7 +350,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-018-S-004',
+                'id_pegawai' => 'PL-018',
+                'id_lab' => 'S-004',
                 'nama_pegawai' => 'Rendi Agus',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'rendi.agus@example.com',
@@ -343,7 +361,8 @@ class UserData extends Seeder
             ],
         
             [
-                'id_pegawai' => 'PL-019-S-005',
+                'id_pegawai' => 'PL-019',
+                'id_lab' => 'S-005',
                 'nama_pegawai' => 'Sari Utami',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'sari.utami@example.com',
@@ -352,7 +371,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-020-S-005',
+                'id_pegawai' => 'PL-020',
+                'id_lab' => 'S-005',
                 'nama_pegawai' => 'Taufik Hidayat',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'taufik.hidayat@example.com',
@@ -361,7 +381,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-021-S-005',
+                'id_pegawai' => 'PL-021',
+                'id_lab' => 'S-005',
                 'nama_pegawai' => 'Umar Zunaidi',
                 'jenis_kelamin' => 'Laki-laki',
                 'email_pegawai' => 'umar.zunaidi@example.com',
@@ -370,7 +391,8 @@ class UserData extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id_pegawai' => 'PL-022-S-005',
+                'id_pegawai' => 'PL-022',
+                'id_lab' => 'S-005',
                 'nama_pegawai' => 'Vina Melati',
                 'jenis_kelamin' => 'Perempuan',
                 'email_pegawai' => 'vina.melati@example.com',

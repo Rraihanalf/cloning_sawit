@@ -19,10 +19,11 @@ return new class extends Migration
             $table->string('id_sampel');
             $table->string('id_lapangan');
             $table->date('tgl_tanam');
+            $table->string('daya_hidup')->default('Hidup');
             $table->float('tinggi_pohon');
-            $table->date('tgl_kematian')->nullable(); // Menambahkan nullable di sini
-            $table->string('bukti_kematian')->nullable(); // Menambahkan nullable di sini juga
-            $table->text('deskripsi');            
+            $table->date('tgl_kematian')->nullable();
+            $table->string('bukti_kematian')->nullable();
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }

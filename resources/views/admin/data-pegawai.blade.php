@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Data Pegawai')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -31,6 +31,9 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Data Pegawai</h3>
+                                    </div>
+                                    <div class="col-12 ml-2">
+                                        <a href="/pegawai/create" class="btn btn-primary">Tambah Data</a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -67,6 +70,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID Pegawai</th>
+                                                    <th>ID Lab</th>
                                                     <th>Nama Pegawai</th>
                                                     <th>Jenis Kelamin</th>
                                                     <th>Email</th>
@@ -78,14 +82,15 @@
                                                 @foreach ($data as $data)
                                                 <tr>                                                
                                                     <td>{{ $data->id_pegawai }}</td>
+                                                    <td>{{ $data->id_lab }}</td>
                                                     <td>{{ $data->nama_pegawai }}</td>
                                                     <td>{{ $data->jenis_kelamin }}</td>
                                                     <td>{{ $data->email_pegawai }}</td>
                                                     <td>{{ $data->no_hp_pegawai }}</td>
                                                     <td>
-                                                        <a href="/showsiswa/detail/{{ $data->id_pegawai }}" class="btn btn-block btn-outline-primary" aria-placeholder="Detail">
-                                                            <i class="nav-icon fas fa-eye"></i>
-                                                        </a>
+                                                        <a href="#" class="btn btn-icon btn-primary"><i class="far fa-eye"></i></a>
+                                                        <a href="#" class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a>
+                                                        <a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
